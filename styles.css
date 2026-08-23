@@ -1,0 +1,385 @@
+/* styles.css - Premium Neon Arcade Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-base: #050508;
+    --card-bg: rgba(20, 20, 35, 0.6);
+    --card-border: rgba(0, 240, 255, 0.15);
+    
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    
+    --neon-cyan: #00f0ff;
+    --neon-purple: #b026ff;
+    --neon-pink: #ff0055;
+    
+    --font-sans: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-base);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(176, 38, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+}
+
+/* Header & Hero */
+header {
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3), inset 0 0 20px rgba(176, 38, 255, 0.3);
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--neon-cyan);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.brand-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+
+.update-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(176, 38, 255, 0.1);
+    border: 1px solid var(--neon-purple);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.2);
+}
+
+/* Layout */
+.layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    width: 300px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: none; /* Hidden on mobile */
+}
+
+@media (min-width: 900px) {
+    .sidebar { display: block; }
+}
+
+.sidebar h3 {
+    color: var(--neon-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding-left: 10px;
+    border-left: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+    border-left-color: var(--neon-purple);
+    transform: translateX(5px);
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    min-width: 0; /* Prevent flex overflow */
+}
+
+section {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.3);
+}
+
+h2 {
+    color: var(--neon-cyan);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--neon-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+}
+
+p, ul {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: rgba(0,0,0,0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+th {
+    background-color: rgba(0, 240, 255, 0.05);
+    color: var(--neon-cyan);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Contact Box Special Styling */
+.contact-box {
+    background: linear-gradient(135deg, rgba(20, 20, 35, 0.8), rgba(176, 38, 255, 0.15));
+    border: 1px solid var(--neon-purple);
+}
+
+.contact-box h2::before {
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* TODO Markers */
+.todo-marker {
+    background-color: rgba(255, 0, 85, 0.15);
+    color: var(--neon-pink);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    border: 1px dashed var(--neon-pink);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
+    100% { opacity: 0.8; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 4rem;
+}
+
+@media (max-width: 600px) {
+    .brand-title {
+        font-size: 2.5rem;
+    }
+    
+    .layout {
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}
+
+.feature-graphic {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 20px;
+    margin: 3rem auto 0;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.15);
+    border: 2px solid var(--card-border);
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Navigation Tabs */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.nav-tabs .tab {
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+.nav-tabs .tab.active {
+    background: rgba(176, 38, 255, 0.15);
+    border-color: var(--neon-purple);
+    color: var(--text-primary);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+}
+.nav-tabs .tab:hover:not(.active) {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--neon-cyan);
+    color: var(--text-primary);
+}
+
