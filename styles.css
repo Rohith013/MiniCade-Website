@@ -425,3 +425,37 @@ footer {
     height: auto;
     display: block;
 }
+
+/* Navigation Tabs */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-tabs .tab {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .tab:hover {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+}
+
+.nav-tabs .tab.active {
+    background: rgba(176, 38, 255, 0.2);
+    color: var(--neon-pink);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+}
