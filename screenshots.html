@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Screenshots of MiniCade - Visual preview of our mobile application.">
+    <title>Screenshots - MiniCade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="minicade_logo_1785683562113.png">
+</head>
+<body>
+    <header>
+        <img src="minicade_logo_1785683562113.png" alt="MiniCade App Icon" class="brand-logo">
+        <h1 class="brand-title">MINICADE</h1>
+        <div class="nav-tabs">
+            <a href="index.html" class="tab">Privacy Policy</a>
+            <a href="terms.html" class="tab">Terms of Service</a>
+        </div>
+        <div class="update-badge">
+            Last Updated: August 2026
+        </div>
+        <img src="feature%20graphics.jpg" alt="MiniCade Games Overview" class="feature-graphic">
+    </header>
+
+        <main class="screenshots-container">
+        <h2>App Screenshots</h2>
+        <p>Take a look at MiniCade in action. Place your screenshot images in the <code>screenshots/</code> folder and update the <code>img</code> tags below to match your file names!</p>
+        <div class="screenshots-grid">
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-214522.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-214729.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-214931.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-214944.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-214956.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-215028.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-215145.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-215159.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/Screenshot_20260823-215208.jpg" alt="App Screenshot"></div>
+            <div class="screenshot-card"><img src="screenshots/WhatsApp Image 2026-08-23 at 23.15.53.jpeg" alt="App Screenshot"></div>
+        </div> -->
+            <!-- <div class="screenshot-card"><img src="screenshots/screenshot2.jpg" alt="Screenshot 2"></div> -->
+            <!-- <div class="screenshot-card"><img src="screenshots/screenshot3.jpg" alt="Screenshot 3"></div> -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WingsDeveloper. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth highlighting for sidebar based on scroll
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.style.color = "var(--text-secondary)";
+                link.style.borderLeftColor = "transparent";
+                if (link.getAttribute("href").includes(current) && current !== "") {
+                    link.style.color = "var(--text-primary)";
+                    link.style.borderLeftColor = "var(--neon-purple)";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
